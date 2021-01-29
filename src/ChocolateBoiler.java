@@ -16,7 +16,8 @@ public class ChocolateBoiler {
 	}
 
 
-// Thread unsafe code - lazy initialization	
+// lazy initialization (Thread unsafe)	
+	
 //	public static ChocolateBoiler getUniqueInstance() {
 //		
 //		if(uniqueInstance == null) {
@@ -24,6 +25,19 @@ public class ChocolateBoiler {
 //		}
 //		return uniqueInstance;
 //	}
+	
+// lazy initialization	(Thread-Safe)
+
+//	public static synchronized ChocolateBoiler getUniqueInstance() {
+//	
+//	if(uniqueInstance == null) {
+//		uniqueInstance = new ChocolateBoiler();
+//	}
+//	return uniqueInstance;
+//}
+	
+	
+// Thread-safe efficient lazy initialization
 
 	public static ChocolateBoiler getUniqueInstance() {
 
