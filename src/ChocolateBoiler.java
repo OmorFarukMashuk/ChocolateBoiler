@@ -14,10 +14,14 @@ public class ChocolateBoiler {
 
 		System.out.println("Creating the Object for ChocolateBoiler");
 	}
-
+// for eager initialization
+	
+//	public static ChocolateBoiler getUniqueInstance() {
+//		return uniqueInstance;
+//	}
 
 // lazy initialization (Thread unsafe)	
-	
+
 //	public static ChocolateBoiler getUniqueInstance() {
 //		
 //		if(uniqueInstance == null) {
@@ -25,7 +29,7 @@ public class ChocolateBoiler {
 //		}
 //		return uniqueInstance;
 //	}
-	
+
 // lazy initialization	(Thread-Safe)
 
 //	public static synchronized ChocolateBoiler getUniqueInstance() {
@@ -35,12 +39,10 @@ public class ChocolateBoiler {
 //	}
 //	return uniqueInstance;
 //}
-	
-	
+
 // Thread-safe efficient lazy initialization
 
 	public static ChocolateBoiler getUniqueInstance() {
-
 
 		if (uniqueInstance == null) {
 			System.out.println("Going to lock the class " + Thread.currentThread().getName());
